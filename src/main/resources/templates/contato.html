@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contato</title>
+</head>
+<body>
+<h1>Fale Conosco</h1>
+
+<form th:action="@{/contato}" method="post" th:object="${mensagem}">
+    <label>Nome:</label>
+    <input type="text" th:field="*{nome}" /><br/>
+    <label>Email:</label>
+    <input type="email" th:field="*{email}" /><br/>
+    <label>Mensagem:</label>
+    <textarea th:field="*{texto}"></textarea><br/>
+    <button type="submit">Enviar</button>
+</form>
+
+<div th:if="${mensagemEnviada}">
+    <p>Mensagem enviada com sucesso!</p>
+</div>
+</body>
+</html>
