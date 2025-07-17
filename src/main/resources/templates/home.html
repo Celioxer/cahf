@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cahf - Soluções.">
-  <meta name="keywords" content="web, IoT, automação, desenvolvimento personalisado e consultoria">
+  <meta name="description" content="Cahf - Soluções em Programação e IoT. Oferecemos desenvolvimento de software, automação com IoT e consultoria.">
+  <meta name="keywords" content="programação, IoT, automação, desenvolvimento de software, consultoria">
   <title>Cahf - Soluções em Programação e IoT</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -93,6 +93,14 @@
         background-color: #5AAE3D;
         border-color: #5AAE3D;
     }
+    .btn-success {
+        background-color: #25D366;
+        border-color: #25D366;
+    }
+    .btn-success:hover {
+        background-color: #1DA851;
+        border-color: #1DA851;
+    }
     .alert-success {
         background-color: #6CC04A;
         border-color: #6CC04A;
@@ -103,6 +111,18 @@
     }
     .card:hover {
         transform: translateY(-10px);
+    }
+    .whatsapp-card {
+        border: 2px solid #25D366 !important;
+    }
+    .form-card {
+        border: 2px solid #25D366 !important;
+    }
+    .card.border-2 {
+        border-width: 2px !important;
+    }
+    .card.border-success {
+        border-color: #25D366 !important;
     }
   </style>
 </head>
@@ -128,10 +148,6 @@
         <li class="nav-item">
           <a class="nav-link" href="#contato">Contato</a>
         </li>
-        <!-- Cancelado por hora
-        <li class="nav-item">
-          <a class="nav-link" href="/mensagens">Mensagens</a>
-        </li> -->
       </ul>
     </div>
   </div>
@@ -141,7 +157,7 @@
 <section class="hero-section" data-aos="fade-up">
   <div class="container">
     <h1>Cahf - Inovação em Tecnologia e Automação</h1>
-    <p class="lead">Na Cahf, transformamos desafios em oportunidades por meio de soluções inteligentes em desenvolvimento. Seja para otimizar processos, conectar dispositivos ou proteger seus dados, estamos aqui para levar a sua ideia do conceito à realidade, com tecnologia de ponta e profissionalismo.
+    <p class="lead">Na Cahf, transformamos desafios em oportunidades através de soluções inteligentes em programação, automação com IoT e segurança da informação. Seja para otimizar processos, conectar dispositivos ou proteger seus dados, estamos aqui para levar sua ideia do conceito à realidade, com tecnologia de ponta e expertise personalizada.
 
       Sua visão, nossa missão.</p>
     <img src="https://pub-0fa25710845a4d1681e9baa938e85832.r2.dev/cahfti.bmp" alt="Ilustração de IoT" class="img-fluid mt-1">
@@ -171,6 +187,7 @@
     </div>
   </div>
 </section>
+
 <!-- Seção de Contato -->
 <section id="contato" class="contact-section py-5">
   <div class="container">
@@ -185,22 +202,41 @@
           <p th:text="${erro}"></p>
         </div>
 
-        <!-- Formulário de contato -->
-        <form th:action="@{/contato}" method="post" th:object="${mensagem}">
-          <div class="mb-3">
-            <label for="nome" class="form-label">Seu nome</label>
-            <input type="text" id="nome" class="form-control" th:field="*{nome}" placeholder="Seu nome" required>
+        <!-- Formulário de contato com borda verde -->
+        <div class="card form-card h-100">
+          <div class="card-body">
+            <form th:action="@{/contato}" method="post" th:object="${mensagem}">
+              <div class="mb-3">
+                <label for="nome" class="form-label">Seu nome</label>
+                <input type="text" id="nome" class="form-control" th:field="*{nome}" placeholder="Seu nome" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Seu e-mail</label>
+                <input type="email" id="email" class="form-control" th:field="*{email}" placeholder="Seu e-mail" required>
+              </div>
+              <div class="mb-3">
+                <label for="texto" class="form-label">Sua mensagem</label>
+                <textarea id="texto" class="form-control" rows="5" th:field="*{texto}" placeholder="Sua mensagem" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            </form>
           </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Seu e-mail</label>
-            <input type="email" id="email" class="form-control" th:field="*{email}" placeholder="Seu e-mail" required>
+        </div>
+      </div>
+
+      <!-- Card do WhatsApp -->
+      <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="100">
+        <div class="card whatsapp-card h-100">
+          <div class="card-body text-center d-flex flex-column justify-content-center">
+            <i class="bi bi-whatsapp" style="font-size: 3rem; color: #25D366;"></i>
+            <h3 class="mt-3">Contato via WhatsApp</h3>
+            <p>Prefere conversar diretamente? Nos chame no WhatsApp!</p>
+            <a href="https://wa.me/5542984420668" class="btn btn-success mt-3">
+              <i class="bi bi-whatsapp"></i> Enviar Mensagem
+            </a>
+            <p class="mt-3 mb-0">Ou ligue para: <br><strong>(42) 98442-0668</strong></p>
           </div>
-          <div class="mb-3">
-            <label for="texto" class="form-label">Sua mensagem</label>
-            <textarea id="texto" class="form-control" rows="5" th:field="*{texto}" placeholder="Sua mensagem" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Enviar</button>
-        </form>
+        </div>
       </div>
     </div>
   </div>
@@ -247,15 +283,14 @@
         <h5>Links Rápidos</h5>
         <ul class="list-unstyled">
           <li><a href="/" style="color: white;">Início</a></li>
-          <li class="nav-item">
-            <a class="nav-link" th:href="@{/projetos}">Projetos</a>
-          </li>
+          <li><a href="/projetos" style="color: white;">Projetos</a></li>
           <li><a href="#contato" style="color: white;">Contato</a></li>
         </ul>
       </div>
       <div class="col-md-4">
         <h5>Contato</h5>
         <p>Email: <a href="mailto:contato@cahf.com.br" style="color: white;">contato@cahf.com.br</a></p>
+        <p>WhatsApp: <a href="https://wa.me/5542984420668" style="color: white;">(42) 98442-0668</a></p>
       </div>
       <div class="col-md-4">
         <h5>Redes Sociais</h5>

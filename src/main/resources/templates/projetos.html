@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cahf - Nossos projetos em desenvolvimento de software e automação com IoT">
+  <meta name="keywords" content="projetos, programação, IoT, automação, desenvolvimento de sites">
+  <title>Cahf - Nossos Projetos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #FFFFFF;
+        color: #000000;
+        padding-top: 70px;
+    }
+    .navbar {
+        background-color: #C51A4A;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white !important;
+        display: flex;
+        align-items: center;
+    }
+    .navbar-brand i {
+        margin-right: 10px;
+        font-size: 1.8rem;
+    }
+    .navbar-nav .nav-link {
+        color: white !important;
+        font-weight: 500;
+        margin-left: 20px;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover {
+        color: #FFD700 !important;
+    }
+    .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: #FFD700;
+        bottom: -5px;
+        left: 0;
+        transition: width 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover::after {
+        width: 100%;
+    }
+    .projects-section {
+        padding: 80px 0;
+    }
+    .project-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin-bottom: 30px;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    .project-img {
+        height: 200px;
+        object-fit: cover;
+    }
+    .iot-badge {
+        background-color: #C51A4A;
+        color: white;
+    }
+    .web-badge {
+        background-color: #6CC04A;
+        color: white;
+    }
+    .footer {
+        background-color: #6CC04A;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+    }
+    .btn-visitar {
+        background-color: #C51A4A;
+        color: white;
+    }
+    .btn-visitar:hover {
+        background-color: #a3153b;
+        color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Menu de Navegação -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <i class="bi bi-code-slash"></i> Cahf
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/projetos">Projetos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#contato">Contato</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Seção de Projetos -->
+<section class="projects-section">
+  <div class="container">
+    <h1 class="text-center mb-5" data-aos="fade-up">Nossos Projetos Realizados</h1>
+
+    <div class="row">
+      <!-- Projeto Quarto Dimensã -->
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="card project-card">
+          <img src="https://pub-0fa25710845a4d1681e9baa938e85832.r2.dev/quartodimen.png" class="card-img-top project-img" alt="Quarto Dimensã">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="card-title mb-0">Quarto Dimensã</h3>
+              <span class="badge web-badge">Desenvolvimento Web</span>
+            </div>
+            <p class="card-text">Site institucional completo para a empresa Quarto Dimensão, com design moderno e responsivo.</p>
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> Design responsivo</li>
+              <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> Integração com redes sociais</li>
+              <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> Formulário de contato</li>
+            </ul>
+            <a href="https://quartodimensa.com.br/" target="_blank" class="btn btn-visitar w-100">
+              <i class="bi bi-box-arrow-up-right"></i> Visitar Site
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projeto Sensores para Agronegócio -->
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="card project-card">
+          <img src="https://pub-0fa25710845a4d1681e9baa938e85832.r2.dev/temperatura.webp" class="card-img-top project-img" alt="Sensores para Agronegócio">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="card-title mb-0">Sensores para Agronegócio</h3>
+              <span class="badge iot-badge">IoT</span>
+            </div>
+            <p class="card-text">Solução completa de sensoriamento para monitoramento de condições ambientais em fazendas.</p>
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> Monitoramento em tempo real</li>
+              <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> API para integração</li>
+              <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> Dashboard de análise</li>
+            </ul>
+            <a href="http://api.cahf.com.br" target="_blank" class="btn btn-visitar w-100">
+              <i class="bi bi-box-arrow-up-right"></i> Acessar Plataforma
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projeto Landing Page Médica -->
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="card project-card">
+          <img src="https://pub-0fa25710845a4d1681e9baa938e85832.r2.dev/medico-thumb.jpg" class="card-img-top project-img" alt="Landing Page Médica">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="card-title mb-0">Landing Page Médica</h3>
+              <span class="badge web-badge">Desenvolvimento Web</span>
+            </div>
+            <p class="card-text">Página de captação para profissional da saúde, com formulário de agendamento e informações sobre especialidade.</p>
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> Design clean e profissional</li>
+              <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> Integração com calendário</li>
+              <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> Responsivo para mobile</li>
+            </ul>
+            <button class="btn btn-secondary w-100" disabled>
+              <i class="bi bi-lock-fill"></i> Projeto Confidencial
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Espaço para novos projetos -->
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="card project-card h-100">
+          <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+            <i class="bi bi-plus-circle" style="font-size: 3rem; color: #6CC04A;"></i>
+            <h3 class="mt-3">Seu Projeto Aqui</h3>
+            <p class="text-muted">Estamos preparados para transformar sua ideia em realidade.</p>
+            <a href="/#contato" class="btn btn-primary mt-3">
+              <i class="bi bi-chat-left-text"></i> Fale Conosco
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Rodapé -->
+<footer class="footer py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Links Rápidos</h5>
+        <ul class="list-unstyled">
+          <li><a href="/" style="color: white;">Início</a></li>
+          <li><a href="/projetos" style="color: white;">Projetos</a></li>
+          <li><a href="/#contato" style="color: white;">Contato</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Contato</h5>
+        <p>Email: <a href="mailto:contato@cahf.com.br" style="color: white;">contato@cahf.com.br</a></p>
+        <p>WhatsApp: <a href="https://wa.me/5542984420668" style="color: white;">(42) 98442-0668</a></p>
+      </div>
+      <div class="col-md-4">
+        <h5>Redes Sociais</h5>
+        <a href="https://www.facebook.com/profile.php?id=61571404607079" style="color: white; margin: 0 5px;"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/celioxer/" style="color: white; margin: 0 5px;"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/code.pgz" style="color: white; margin: 0 5px;"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+    <p class="text-center mt-4">&copy; 2025 Cahf. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>
